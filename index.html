@@ -291,7 +291,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 // ── Load Data ──
 async function loadData() {
   try {
-    const res = await fetch(API_URL + '?action=all');
+    const res = await fetch(API_URL + '?action=all', {redirect: 'follow'});
     DATA = await res.json();
     renderAll();
     document.getElementById('loading').classList.add('hide');
